@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-Waheed"
+		},
+		"LS_des_POC_connectionString": {
+			"value": ""
+		},
+		"dest_azure_colzani_connectionString": {
+			"value": ""
+		},
+		"poc_colzanilive_onprem_connectionString": {
+			"value": ""
+		},
+		"JsonCurrencyRate_properties_typeProperties_url": {
+			"value": "https://openexchangerates.org"
+		},
+		"JsonUSDTOPKR_properties_typeProperties_url": {
+			"value": "https://aridianweb.atdemo.live"
+		}
+	}
+}
