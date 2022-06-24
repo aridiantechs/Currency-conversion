@@ -1,0 +1,9 @@
+{
+	"name": "ADF-Waheed",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "79a1599f-23c6-4e51-9454-7ffe92f16b7b",
+		"tenantId": "b7098c68-0d0d-41a4-839c-c08186fc9029"
+	}
+}
