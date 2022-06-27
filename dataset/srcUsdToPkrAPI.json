@@ -5,6 +5,9 @@
 			"referenceName": "JsonUSDTOPKR",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Currency conversion"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
