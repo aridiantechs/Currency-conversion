@@ -82,38 +82,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Round Minutes",
-				"type": "Script",
-				"dependsOn": [
-					{
-						"activity": "Currency Rate API to SQL Table",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"linkedServiceName": {
-					"referenceName": "LS_des_POC",
-					"type": "LinkedServiceReference"
-				},
-				"typeProperties": {
-					"scripts": [
-						{
-							"type": "Query",
-							"text": "update [dbo].[CurrencyRate]\nset [Date]=DATEADD(HOUR, DATEDIFF(HOUR, '20000101',Date),'20000101') "
-						}
-					]
-				}
 			}
 		],
 		"folder": {
