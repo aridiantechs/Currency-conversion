@@ -1,13 +1,13 @@
 {
 	"name": "JsonUSDTOPKR",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://aridianweb.atdemo.live",
+			"url": "https://aridianweb.atdemo.live/currency.json",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
