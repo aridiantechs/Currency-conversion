@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://aridianweb.atdemo.live/currency.json",
+			"url": "https://aridianweb.atdemo.live",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
