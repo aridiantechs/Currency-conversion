@@ -1,0 +1,19 @@
+{
+	"name": "srcUsdToPkrAPI",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "JsonUSDTOPKR",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/currency.json"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

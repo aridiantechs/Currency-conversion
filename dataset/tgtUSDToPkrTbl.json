@@ -1,0 +1,28 @@
+{
+	"name": "tgtUSDToPkrTbl",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_des_POC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Price",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CurrencyRate"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
