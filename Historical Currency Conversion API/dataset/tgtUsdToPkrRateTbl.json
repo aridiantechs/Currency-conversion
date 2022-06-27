@@ -5,6 +5,9 @@
 			"referenceName": "LS_des_POC",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Currency Conversion"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
