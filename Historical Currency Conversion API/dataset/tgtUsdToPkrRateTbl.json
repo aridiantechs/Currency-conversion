@@ -1,5 +1,5 @@
 {
-	"name": "tgtCurrencyRateTbl",
+	"name": "tgtUsdToPkrRateTbl",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_des_POC",
