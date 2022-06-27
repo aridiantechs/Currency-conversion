@@ -71,6 +71,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Currency Conversion"
+		},
 		"annotations": [],
 		"lastPublishTime": "2022-06-24T13:19:19Z"
 	},
