@@ -113,6 +113,9 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
+				"folder": {
+					"name": "Currency conversion"
+				},
 				"annotations": [],
 				"lastPublishTime": "2022-06-24T13:19:19Z"
 			},
@@ -122,7 +125,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/USD to PKR Currency Conversion')]",
+			"name": "[concat(parameters('factoryName'), '/Load USD to PKR Currency Conversion Hourly Data')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -193,14 +196,18 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "srcCurrencyRateAPI",
+								"referenceName": "srcUsdtoPkrRateAPI",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"base": "USD",
+									"app_id": "eff210300b0149628cca637a0dfd538c",
+									"symbols": "PKR"
+								}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "tgtCurrencyRateTbl",
+								"referenceName": "tgtUsdToPkrRateTbl",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -243,12 +250,15 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
+				"folder": {
+					"name": "Currency conversion"
+				},
 				"annotations": [],
 				"lastPublishTime": "2022-06-24T09:07:04Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/srcCurrencyRateAPI')]",
-				"[concat(variables('factoryId'), '/datasets/tgtCurrencyRateTbl')]",
+				"[concat(variables('factoryId'), '/datasets/srcUsdtoPkrRateAPI')]",
+				"[concat(variables('factoryId'), '/datasets/tgtUsdToPkrRateTbl')]",
 				"[concat(variables('factoryId'), '/linkedServices/LS_des_POC')]"
 			]
 		},
@@ -529,29 +539,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/srcCurrencyRateAPI')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "JsonCurrencyRate",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "HttpServerLocation",
-						"relativeUrl": "/api/latest.json?base=USD&app_id=eff210300b0149628cca637a0dfd538c&symbols=PKR"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/JsonCurrencyRate')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/srcIncrementalDataPoc')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -578,6 +565,9 @@
 					"referenceName": "JsonUSDTOPKR",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "Currency conversion"
+				},
 				"annotations": [],
 				"type": "Json",
 				"typeProperties": {
@@ -593,24 +583,43 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/tgtCurrencyRateTbl')]",
+			"name": "[concat(parameters('factoryName'), '/srcUsdtoPkrRateAPI')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_des_POC",
+					"referenceName": "JsonCurrencyRate",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"base": {
+						"type": "string"
+					},
+					"app_id": {
+						"type": "string"
+					},
+					"symbols": {
+						"type": "string"
+					}
+				},
+				"folder": {
+					"name": "Currency conversion"
+				},
 				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
+				"type": "Json",
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "CurrencyRate"
-				}
+					"location": {
+						"type": "HttpServerLocation",
+						"relativeUrl": {
+							"value": "@concat('/api/latest.json?base=',dataset().base,'&app_id=',dataset().app_id,'&symbols=',dataset().symbols)",
+							"type": "Expression"
+						}
+					}
+				},
+				"schema": {}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_des_POC')]"
+				"[concat(variables('factoryId'), '/linkedServices/JsonCurrencyRate')]"
 			]
 		},
 		{
@@ -621,6 +630,9 @@
 				"linkedServiceName": {
 					"referenceName": "LS_des_POC",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Currency conversion"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
@@ -636,6 +648,30 @@
 						"precision": 15
 					}
 				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "CurrencyRate"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_des_POC')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tgtUsdToPkrRateTbl')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_des_POC",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Currency conversion"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "CurrencyRate"
@@ -729,7 +765,7 @@
 				"runtimeState": "Started",
 				"pipeline": {
 					"pipelineReference": {
-						"referenceName": "USD to PKR Currency Conversion",
+						"referenceName": "Load USD to PKR Currency Conversion Hourly Data",
 						"type": "PipelineReference"
 					},
 					"parameters": {}
@@ -748,7 +784,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/USD to PKR Currency Conversion')]"
+				"[concat(variables('factoryId'), '/pipelines/Load USD to PKR Currency Conversion Hourly Data')]"
 			]
 		},
 		{
