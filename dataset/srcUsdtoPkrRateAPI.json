@@ -5,6 +5,17 @@
 			"referenceName": "JsonCurrencyRate",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"base": {
+				"type": "string"
+			},
+			"app_id": {
+				"type": "string"
+			},
+			"symbols": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "Currency conversion"
 		},
@@ -13,7 +24,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "/api/latest.json?base=USD&app_id=eff210300b0149628cca637a0dfd538c&symbols=PKR"
+				"relativeUrl": {
+					"value": "@concat('/api/latest.json?base=',dataset().base,'&app_id=',dataset().app_id,'&symbols=',dataset().symbols)",
+					"type": "Expression"
+				}
 			}
 		},
 		"schema": {}
