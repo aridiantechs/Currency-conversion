@@ -79,7 +79,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "tgtCurrencyRateTbl",
+						"referenceName": "tgtUsdToPkrRateTbl",
 						"type": "DatasetReference"
 					}
 				]
