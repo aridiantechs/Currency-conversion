@@ -1,5 +1,5 @@
 {
-	"name": "USD to PKR Currency Conversion",
+	"name": "Load USD to PKR Currency Conversion Hourly Data",
 	"properties": {
 		"activities": [
 			{
@@ -68,7 +68,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "srcCurrencyRateAPI",
+						"referenceName": "srcUsdtoPkrRateAPI",
 						"type": "DatasetReference"
 					}
 				],
