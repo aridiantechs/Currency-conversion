@@ -526,7 +526,7 @@
 							"scripts": [
 								{
 									"type": "Query",
-									"text": "update [dbo].[CurrencyRate]\nset [Date]=DATEADD(HOUR, DATEDIFF(HOUR, '20000101',Date),'20000101') "
+									"text": "update [dbo].[CurrencyRate]\nset [Date]=DATEADD(HOUR, DATEDIFF(HOUR, '20000101',Date),'20000101') ;\nupdate [dbo].[CurrencyRate]\nset [Year]=YEAR([Date])\nwhere [Year] is null;\n\nupdate [dbo].[CurrencyRate]\nset [Month]=DATENAME(MONTH, [Date])\nwhere [Month] is null;\n\nupdate [dbo].[CurrencyRate]\nset [Day]=Day([Date])\nwhere [Day] is null;\n"
 								}
 							]
 						}
