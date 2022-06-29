@@ -85,7 +85,7 @@
 				]
 			},
 			{
-				"name": "Round Minutes",
+				"name": "Round Minutes and Extract Year Month Day",
 				"type": "Script",
 				"dependsOn": [
 					{
