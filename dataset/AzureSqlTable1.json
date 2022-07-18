@@ -5,20 +5,12 @@
 			"referenceName": "dest_azure_colzani",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"des_tbl": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "zoha",
-			"table": {
-				"value": "@dataset().des_tbl",
-				"type": "Expression"
-			}
+			"schema": "dbo",
+			"table": "datacsv"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

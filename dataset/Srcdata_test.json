@@ -1,0 +1,192 @@
+{
+	"name": "Srcdata_test",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "data.csv",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_AuthorizationCode",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_BankAccountNumber",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_Date",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_MessageType",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_NetworkId",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_NotificationEventId",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_RequestedAmount",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_RequestedAmountCurrency",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_Service",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_Time",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_TransactionAmount",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_TransactionCurrency",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_TransactionDescription",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_TransactionId",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_TransactionResponseCode",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_TransactionType",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_CardAcceptor_AcquirerId",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_CardAcceptor_DeviceType",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_CardAcceptor_LocalDateTime",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_CardAcceptor_MCC",
+				"type": "String"
+			},
+			{
+				"name": "Transaction_CardAcceptor_MerchantNameAndLocation",
+				"type": "String"
+			},
+			{
+				"name": "Header_Id",
+				"type": "String"
+			},
+			{
+				"name": "Header_MessageCreationDateTime",
+				"type": "String"
+			},
+			{
+				"name": "Header_UserId",
+				"type": "String"
+			},
+			{
+				"name": "Card_AddressLine1",
+				"type": "String"
+			},
+			{
+				"name": "Card_AvailableBalance",
+				"type": "String"
+			},
+			{
+				"name": "Card_CardNo",
+				"type": "String"
+			},
+			{
+				"name": "Card_CardProgramID",
+				"type": "String"
+			},
+			{
+				"name": "Card_CardReferenceID",
+				"type": "String"
+			},
+			{
+				"name": "Card_CardStatus",
+				"type": "String"
+			},
+			{
+				"name": "Card_CellNo",
+				"type": "String"
+			},
+			{
+				"name": "Card_City",
+				"type": "String"
+			},
+			{
+				"name": "Card_CountryCode",
+				"type": "String"
+			},
+			{
+				"name": "Card_CustomerId",
+				"type": "String"
+			},
+			{
+				"name": "Card_Email",
+				"type": "String"
+			},
+			{
+				"name": "Card_FirstName",
+				"type": "String"
+			},
+			{
+				"name": "Card_LastName",
+				"type": "String"
+			},
+			{
+				"name": "Card_LedgerBalance",
+				"type": "String"
+			},
+			{
+				"name": "Card_PostalCode",
+				"type": "String"
+			},
+			{
+				"name": "Card_PrimaryCardReferenceID",
+				"type": "String"
+			},
+			{
+				"name": "Card_State",
+				"type": "String"
+			}
+		]
+	}
+}
