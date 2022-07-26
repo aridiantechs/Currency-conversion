@@ -44,7 +44,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "Actor"
+			"table": "Enable_log"
 		}
 	}
 }
