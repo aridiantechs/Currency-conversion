@@ -325,13 +325,6 @@
 							},
 							"type": "String"
 						},
-						"Source_Type": {
-							"value": {
-								"value": "@{activity('Enabling Log testing').output.executionDetails[0].source.type}\n",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
 						"TriggerId": {
 							"value": {
 								"value": "@{pipeline().TriggerId}",
