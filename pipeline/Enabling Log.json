@@ -78,6 +78,153 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Log fail activity error",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Enabling Log testing",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sp_UpdateErrorTable]",
+					"storedProcedureParameters": {
+						"copyDuration_in_secs": {
+							"value": {
+								"value": "@{activity('Enabling Log testing').output.copyDuration}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"DataFactory_Name": {
+							"value": {
+								"value": "@{pipeline().DataFactory}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Destination": {
+							"value": null,
+							"type": "String"
+						},
+						"effectiveIntegrationRuntime": {
+							"value": {
+								"value": "@{activity('Enabling Log testing').output.effectiveIntegrationRuntime}\n",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"ErrorCode": {
+							"value": {
+								"value": "@{activity('Enabling Log testing').error.errorCode}\n",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"ErrorDescription": {
+							"value": {
+								"value": "@{activity('Enabling Log testing').error.message}\n",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"ErrorLoggedTime": {
+							"value": "@utcnow()",
+							"type": "String"
+						},
+						"Execution_Status": {
+							"value": {
+								"value": "@{activity('Enabling Log testing').output.executionDetails[0].status}\n",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"FailureType": {
+							"value": {
+								"value": "@concat(activity('Enabling Log testing').error.message,'failureType:',activity('Enabling Log testing').error.failureType)\n",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"No_ParallelCopies": {
+							"value": {
+								"value": "@{activity('Enabling Log testing').output.usedParallelCopies}\n",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						},
+						"Pipeline_Name": {
+							"value": {
+								"value": "@{pipeline().Pipeline}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"RunId": {
+							"value": {
+								"value": "@{pipeline().RunId}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Sink_Type": {
+							"value": {
+								"value": "@{activity('Enabling Log testing').output.executionDetails[0].sink.type}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Source": {
+							"value": null,
+							"type": "String"
+						},
+						"Source_Type": {
+							"value": {
+								"value": "@{activity('Enabling Log testing').output.executionDetails[0].source.type}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"TriggerId": {
+							"value": {
+								"value": "@{pipeline().TriggerId}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"TriggerName": {
+							"value": {
+								"value": "@{pipeline().TriggerName}",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"TriggerTime": {
+							"value": "@{pipeline().TriggerTime}",
+							"type": "String"
+						},
+						"TriggerType": {
+							"value": "@{pipeline().TriggerType}",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_des_POC",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
