@@ -115,10 +115,6 @@
 							},
 							"type": "String"
 						},
-						"Destination": {
-							"value": null,
-							"type": "String"
-						},
 						"effectiveIntegrationRuntime": {
 							"value": {
 								"value": "@{activity('Enabling Log testing').output.effectiveIntegrationRuntime}\n",
@@ -184,10 +180,6 @@
 								"value": "@{activity('Enabling Log testing').output.executionDetails[0].sink.type}",
 								"type": "Expression"
 							},
-							"type": "String"
-						},
-						"Source": {
-							"value": null,
 							"type": "String"
 						},
 						"Source_Type": {
