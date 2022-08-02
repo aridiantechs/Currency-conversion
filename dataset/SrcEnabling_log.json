@@ -1,0 +1,86 @@
+{
+	"name": "SrcEnabling_log",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "abc",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "20220729_TOVUTI.xlsx",
+				"container": "data"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "First Name",
+				"type": "String"
+			},
+			{
+				"name": "Last Name",
+				"type": "String"
+			},
+			{
+				"name": "Gender",
+				"type": "String"
+			},
+			{
+				"name": "Additional Information",
+				"type": "String"
+			},
+			{
+				"name": "Mobile phone",
+				"type": "String"
+			},
+			{
+				"name": "User ID",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "Groups",
+				"type": "String"
+			},
+			{
+				"name": "Category",
+				"type": "String"
+			},
+			{
+				"name": "Course",
+				"type": "String"
+			},
+			{
+				"name": "Score",
+				"type": "String"
+			},
+			{
+				"name": "Progress",
+				"type": "String"
+			},
+			{
+				"name": "Due Date",
+				"type": "String"
+			},
+			{
+				"name": "Start Date",
+				"type": "String"
+			},
+			{
+				"name": "Completed Date",
+				"type": "String"
+			},
+			{
+				"name": "Last Activity Date",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "ExcelSource",
 						"additionalColumns": [
 							{
 								"name": "LoadTime",
@@ -30,9 +30,6 @@
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
@@ -68,7 +65,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "srcEnablingLog",
+						"referenceName": "SrcEnabling_log",
 						"type": "DatasetReference"
 					}
 				],
@@ -137,7 +134,10 @@
 							"type": "String"
 						},
 						"ErrorLoggedTime": {
-							"value": "@utcnow()",
+							"value": {
+								"value": "@utcnow()",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"Execution_Status": {
@@ -204,11 +204,17 @@
 							"type": "String"
 						},
 						"TriggerTime": {
-							"value": "@{pipeline().TriggerTime}",
+							"value": {
+								"value": "@{pipeline().TriggerTime}",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"TriggerType": {
-							"value": "@{pipeline().TriggerType}",
+							"value": {
+								"value": "@{pipeline().TriggerType}",
+								"type": "Expression"
+							},
 							"type": "String"
 						}
 					}
@@ -241,7 +247,10 @@
 					"storedProcedureName": "[dbo].[sp_UpdateLogTable]",
 					"storedProcedureParameters": {
 						"CopyActivity_End_Time": {
-							"value": "@{utcnow()}",
+							"value": {
+								"value": "@{utcnow()}",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"CopyActivity_queuingDuration_in_secs": {
@@ -273,7 +282,10 @@
 							"type": "String"
 						},
 						"DataFactory_Name": {
-							"value": "@{pipeline().DataFactory}",
+							"value": {
+								"value": "@{pipeline().DataFactory}",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"effectiveIntegrationRuntime": {
@@ -347,7 +359,10 @@
 							"type": "String"
 						},
 						"TriggerType": {
-							"value": "@{pipeline().TriggerType}",
+							"value": {
+								"value": "@{pipeline().TriggerType}",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"Source_Type": {
