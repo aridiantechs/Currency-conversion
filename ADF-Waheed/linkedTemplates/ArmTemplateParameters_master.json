@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADF-Waheed"
 		},
+		"LS_blob_connectionString": {
+			"value": ""
+		},
 		"LS_des_POC_connectionString": {
 			"value": ""
 		},
