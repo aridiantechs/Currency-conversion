@@ -25,7 +25,7 @@
 		},
 		"JsonCurrencyRate_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://openexchangerates.org"
+			"defaultValue": "https://api.exchangerate.host/latest"
 		},
 		"JsonUSDTOPKR_properties_typeProperties_url": {
 			"type": "string",

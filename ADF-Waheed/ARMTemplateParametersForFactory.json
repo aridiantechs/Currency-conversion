@@ -18,7 +18,7 @@
 			"value": ""
 		},
 		"JsonCurrencyRate_properties_typeProperties_url": {
-			"value": "https://openexchangerates.org"
+			"value": "https://api.exchangerate.host/latest"
 		},
 		"JsonUSDTOPKR_properties_typeProperties_url": {
 			"value": "https://aridianweb.atdemo.live"
