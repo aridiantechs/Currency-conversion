@@ -9,9 +9,6 @@
 			"base": {
 				"type": "string"
 			},
-			"app_id": {
-				"type": "string"
-			},
 			"symbols": {
 				"type": "string"
 			}
@@ -25,7 +22,7 @@
 			"location": {
 				"type": "HttpServerLocation",
 				"relativeUrl": {
-					"value": "@concat('/api/latest.json?base=',dataset().base,'&app_id=',dataset().app_id,'&symbols=',dataset().symbols)",
+					"value": "@concat('?base=',dataset().base,'&symbol=',dataset().symbols)",
 					"type": "Expression"
 				}
 			}
