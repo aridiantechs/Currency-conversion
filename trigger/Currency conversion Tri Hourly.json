@@ -8,7 +8,7 @@
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Minute",
-				"interval": 30,
+				"interval": 2,
 				"startTime": "2022-09-15T11:49:00",
 				"timeZone": "Pakistan Standard Time"
 			}
