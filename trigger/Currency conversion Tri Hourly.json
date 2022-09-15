@@ -1,0 +1,17 @@
+{
+	"name": "Currency conversion Tri Hourly",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 30,
+				"startTime": "2022-09-15T11:49:00",
+				"timeZone": "Pakistan Standard Time"
+			}
+		}
+	}
+}
