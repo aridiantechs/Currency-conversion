@@ -1055,7 +1055,7 @@
 									},
 									{
 										"source": {
-											"name": "Price",
+											"name": "High",
 											"type": "String",
 											"physicalType": "String"
 										},
