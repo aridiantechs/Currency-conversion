@@ -14,8 +14,8 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Minute",
-				"interval": 15,
+				"frequency": "Hour",
+				"interval": 1,
 				"startTime": "2022-09-15T11:49:00",
 				"timeZone": "Pakistan Standard Time"
 			}
